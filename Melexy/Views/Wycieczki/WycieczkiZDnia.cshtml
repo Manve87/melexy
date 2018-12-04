@@ -1,0 +1,23 @@
+﻿@model Melexy.VievModels.WycieczkiZDnia
+@{
+    ViewBag.Title = "WycieczkiZDnia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    var className = Model.Wycieczki.Count > 0 ? "popular" : null;
+}
+
+<h2 class="@className" >  WycieczkiZDnia</h2>
+@if (Model.Wycieczki.Count == 0)
+{
+    <text> wycieczek </text>
+}
+else
+{
+<ul>
+    @foreach (var wycieczki in Model.Wycieczki)
+    {
+       <li>@wycieczki.cena</li>
+    }
+</ul>
+}
